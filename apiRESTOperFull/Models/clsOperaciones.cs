@@ -2,33 +2,57 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System;
 
 namespace apiRESTOperFull.Models
 {
     public class clsOperaciones
     {
-        // Definicion de atributos
-        private double oper1 { get; set; }
-        
-        private double oper2 { get; set; }
+        // Atributos privados
+        private double oper1;
+        private double oper2;
+        private double oper3;
+        private double resul;
 
-        private double oper3 { get; set; }
-        
-        private double resul { get; set; }
-
-        private string calculo { get; }
-    }
-
-    public void setCalculo(string valor)
-    {
-        if (valor == "cono" || valor == "esfH" || valor == "esfM"
-            || valor == "cilin" || valor == "hemis")
+        // Propiedades públicas
+        public double Oper1
         {
-            calculo = valor;
+            get { return oper1; }
+            set { oper1 = value; }
         }
-        else
+
+        public double Oper2
         {
-            throw new ArgumentException("Tipo de cálculo no válido");
+            get { return oper2; }
+            set { oper2 = value; }
+        }
+
+        public double Oper3
+        {
+            get { return oper3; }
+            set { oper3 = value; }
+        }
+
+        public double Resultado
+        {
+            get { return resul; }
+            private set { resul = value; }
+        }
+
+        public string Calculo { get; private set; }
+
+        public void SetCalculo(string valor)
+        {
+            string[] tiposValidos = { "cono", "esfH", "esfM", "cilin", "hemis" };
+            
+            if (Array.Exists(tiposValidos, t => t == valor))
+            {
+                Calculo = valor;
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de cálculo no válido");
+            }
         }
     }
 }
