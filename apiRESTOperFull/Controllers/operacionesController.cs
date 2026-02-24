@@ -10,7 +10,14 @@ namespace apiRESTOperFull.Controllers
 {
     public class operacionesController : ApiController
     {
-        public static clsOperaciones[] objOperaciones = null; 
+        public static clsOperaciones[] objOperaciones = new clsOperaciones[5]
+        {
+            new clsOperaciones(), // [0] Cono truncado
+            new clsOperaciones(), // [1] Esfera hueca
+            new clsOperaciones(), // [2] Esfera maciza
+            new clsOperaciones(), // [3] Cilindro hueco
+            new clsOperaciones()  // [4] Hemisferio hueco
+        };
 
 
     }
