@@ -16,7 +16,7 @@ namespace apiRESTOperFull
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "oper/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
