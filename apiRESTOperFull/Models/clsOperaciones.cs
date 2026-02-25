@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System;
 
 namespace apiRESTOperFull.Models
 {
@@ -12,7 +11,7 @@ namespace apiRESTOperFull.Models
         private double oper1;
         private double oper2;
         private double oper3;
-        private double resul;
+        public double resul;
 
         // Propiedades públicas
         public double Oper1
@@ -36,10 +35,10 @@ namespace apiRESTOperFull.Models
         public double Resultado
         {
             get { return resul; }
-            private set { resul = value; }
+            set { resul = value; }
         }
 
-        public string Calculo { get; private set; }
+        public string Calculo { get; set; }
 
         public void SetCalculo(string valor)
         {
